@@ -15,10 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('pesanan_id')->constrained('pesanans')->cascadeOnDelete();
             $table->foreignId('menu_id')->constrained('menus')->restrictOnDelete();
-            $table->integer('jumlah_pesan');
-            $table->decimal('harga_satuan', 10, 2);
-            $table->decimal('subtotal', 12, 2);
-             $table->string('catatan')->nullable();
+            $table->integer('jumlah');
+            $table->integer('harga_satuan');
+            $table->string('catatan')->nullable();
             $table->timestamps();
         });
     }

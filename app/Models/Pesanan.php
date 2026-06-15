@@ -6,6 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pesanan extends Model
 {
+
+    protected $fillable =[
+        'user_id',
+        'nomor_meja',
+        'total_harga',
+        'uang_bayar',
+        'Kembalian',
+        'status',
+    ];
        public function user(){
         return $this->belongsTo(User::class, 'user_id');
     }

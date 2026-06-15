@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('pesanans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->restrictOnDelete();
-            $table->foreignId('meja_id')->constarined('mejas')->restrictOnDelete();
-            $table->string('nama_pelanggan',100);
-            $table->enum('status_pesanan',['Menunggu Dimasak','Sedang Dimasak','Siap dimasak','Siap Disajikan','Selesai'])->default('Menunggu Dimasak');
-            $table->decimal('total_harga', 12, 2)->default(0);
+            $table->string('nomor_meja' ,20);
+            $table->enum('status',['Diproses','Siap Disajikan','Selesai'])->default('Diproses');
+            $table->integer('total_harga')->default(0);
+            $table->integer('uang_bayar')->default(0);  
+            $table->integer('kembalian')->default(0);
             $table->timestamps();
         });
     }

@@ -19,29 +19,31 @@
                 </div>
 
                 <nav class="mt-6 px-4 space-y-1">
-                    <a href="{{ route('dashboard') }}" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg bg-slate-800 text-amber-500">
-                        <span class="mr-3">📊</span> Dashboard
-                    </a>
-                    <a href="#" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
-                        <span class="mr-3">🖥️</span> Sistem POS / Kasir
-                    </a>
-                    <a href="#" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
-                        <span class="mr-3">🍔</span> Manajemen Menu
-                    </a>
-                    <a href="#" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
-                        <span class="mr-3">👨‍🍳</span> Monitor Dapur
-                    </a>
-                    <a href="#" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
-                        <span class="mr-3">📈</span> Laporan Pendapatan
-                    </a>
-                </nav>
+    @if(in_array(auth()->user()->role, ['kasir', 'admin']))
+    <a href="{{ route('dashboard') }}" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg bg-slate-800 text-amber-500">
+        <span class="mr-3">📊</span> Sistem POS / Kasir
+    </a>
+    @endif
+
+    @if(auth()->user()->role == 'admin')
+    <a href="{{ route('menus.index') }}" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
+        <span class="mr-3">🍔</span> Manajemen Menu
+    </a>
+    @endif
+
+    @if(in_array(auth()->user()->role, ['dapur', 'admin']))
+    <a href="{{ route('dapur.index') }}" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
+        <span class="mr-3">👨‍🍳</span> Monitor Dapur
+    </a>
+    @endif
+</nav>
             </div>
 
             <div class="p-4 border-t border-slate-800">
                 <div class="flex items-center justify-between mb-2 px-2">
                     <div class="text-xs text-slate-400">
-                        <p class="font-semibold text-slate-200">{{ Auth::user()->nama_lengkap }}</p>
-                        <p class="italic">@<span>{{ Auth::user()->username }}</span></p>
+                        <p class="font-semibold text-slate-200">{{ Auth::user()->name }}</p>
+                        <p class="italic">@<span>{{ Auth::user()->email }}</span></p>
                     </div>
                 </div>
                 <form method="POST" action="{{ route('logout') }}">
