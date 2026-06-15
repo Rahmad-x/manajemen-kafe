@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
+    protected $fillable = [
+        'nama_menu',
+        'kategori',
+        'harga',
+        'status',
+    ];
+
     public function kategori(){
         return $this->belongsTo(KategoriMenu::class, 'kategori_id');
     
