@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('jumlah_pesan');
             $table->decimal('harga_satuan', 10, 2);
             $table->decimal('subtotal', 12, 2);
-            $table->string('catatan')->nullable();
+             $table->string('catatan')->nullable();
             $table->timestamps();
         });
     }
