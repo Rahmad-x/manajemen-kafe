@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pesanans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('user')->restrictOnDelete();
+            $table->foreignId('user_id')->constrained('users')->restrictOnDelete();
             $table->foreignId('meja_id')->constarined('mejas')->restrictOnDelete();
             $table->string('nama_pelanggan',100);
             $table->enum('status_pesanan',['Menunggu Dimasak','Sedang Dimasak','Siap dimasak','Siap Disajikan','Selesai'])->default('Menunggu Dimasak');

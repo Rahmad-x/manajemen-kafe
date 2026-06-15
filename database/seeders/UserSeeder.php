@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 class UserSeeder extends Seeder
 {
     /**
@@ -17,19 +18,19 @@ class UserSeeder extends Seeder
                 'role_id' => 1,
                 'nama_lengkap' => 'Administrator Kafe',
                 'username' => 'admin',
-                'password'=> Has::make('password123'),
+                'password'=> Hash::make('password123'),
             ],
             [
                 'role_id' => 2,
                 'nama_lengkap' => 'Kasir 1',
                 'username' => 'kasir',
-                'password'=> Has::make('password123'),
+                'password'=> Hash::make('password123'),
             ],
             [
                 'role_id' => 3,
                 'nama_lengkap' => 'Koki Dapur',
                 'username' => 'daput',
-                'password'=> Has::make('password123'),
+                'password'=> Hash::make('password123'),
             ]        
         ]);    
     }
