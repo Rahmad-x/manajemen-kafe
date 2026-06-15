@@ -3,13 +3,16 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\MenuController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Menu;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $menus = Menu::where('status','Tersedia')->get();
+
+    return view('dashboard', compact('menus'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
