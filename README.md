@@ -4,7 +4,7 @@ Kopi-Tech adalah aplikasi berbasis web yang dirancang untuk mengotomatisasi oper
 👥 Anggota Kelompok & Pembagian Tugas
 Proyek ini dikembangkan secara berkelompok yang terdiri dari 3 mahasiswa dengan pembagian tugas yang jelas sebagai bukti kontribusi aktif pada repositori Git:
 
-Rahmad (NIM: [Isi NIM kamu]) - Backend & Database Developer
+Rahmad (NIM: 2410817210004) - Full Stack Developer
 
 Merancang arsitektur database relasional, sistem autentikasi, dan model relasi Eloquent.
 
@@ -12,21 +12,19 @@ Membuat RoleMiddleware untuk pembatasan hak akses multi-user (Admin, Kasir, Dapu
 
 Mengimplementasikan fitur Smart Login (Autentikasi ganda via Username atau Email).
 
-[Nama Anggota 2] (NIM: [Isi NIM]) - Frontend & UI/UX Specialist
+Mengembangkan halaman Monitor Antrean Dapur (Kitchen Display System) dengan layout geser horizontal yang efisien.
+
+Membuat fitur Manajemen Data Master Menu (CRUD) yang dikhususkan untuk akun Admin.
+
+Menyusun data dummy pada DatabaseSeeder untuk mempermudah simulasi pengujian sistem.
+
+DANDY ORLEN JR.PONGPALILU (NIM: 2410817310018) - Frontend & UI/UX Specialist
 
 Membangun antarmuka (UI) Sistem POS Kasir yang responsif menggunakan Tailwind CSS.
 
 Mengembangkan fitur kalkulator hitung kembalian live (tanpa reload halaman) menggunakan JavaScript.
 
 Mengintegrasikan tombol toggle tampil/sembunyikan kata sandi (👁️) pada halaman login.
-
-[Nama Anggota 3] (NIM: [Isi NIM]) - Fullstack Helper & Quality Assurance
-
-Mengembangkan halaman Monitor Antrean Dapur (Kitchen Display System) dengan layout geser horizontal yang efisien.
-
-Membuat fitur Manajemen Data Master Menu (CRUD) yang dikhususkan untuk akun Admin.
-
-Menyusun data dummy pada DatabaseSeeder untuk mempermudah simulasi pengujian sistem.
 
 🚀 Fitur Utama Aplikasi
 Aplikasi Kopi-Tech dibekali dengan berbagai fitur wajib dan tambahan yang mengikuti praktik pengembangan web modern:
