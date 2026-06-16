@@ -1,58 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+☕ Kopi-Tech - Sistem POS Kasir & Manajemen Kafe Terintegrasi
+Kopi-Tech adalah aplikasi berbasis web yang dirancang untuk mengotomatisasi operasional kafe, mulai dari sistem kassa POS (Point of Sale) kasir, manajemen menu oleh admin, hingga monitor antrean pesanan di dapur secara real-time. Proyek ini dikembangkan sebagai Tugas Akhir Mata Kuliah Pemrograman Web II.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+👥 Anggota Kelompok & Pembagian Tugas
+Proyek ini dikembangkan secara berkelompok yang terdiri dari 3 mahasiswa dengan pembagian tugas yang jelas sebagai bukti kontribusi aktif pada repositori Git:
 
-## About Laravel
+Rahmad (NIM: [Isi NIM kamu]) - Backend & Database Developer
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Merancang arsitektur database relasional, sistem autentikasi, dan model relasi Eloquent.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Membuat RoleMiddleware untuk pembatasan hak akses multi-user (Admin, Kasir, Dapur).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Mengimplementasikan fitur Smart Login (Autentikasi ganda via Username atau Email).
 
-## Learning Laravel
+[Nama Anggota 2] (NIM: [Isi NIM]) - Frontend & UI/UX Specialist
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Membangun antarmuka (UI) Sistem POS Kasir yang responsif menggunakan Tailwind CSS.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Mengembangkan fitur kalkulator hitung kembalian live (tanpa reload halaman) menggunakan JavaScript.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+Mengintegrasikan tombol toggle tampil/sembunyikan kata sandi (👁️) pada halaman login.
 
-## Agentic Development
+[Nama Anggota 3] (NIM: [Isi NIM]) - Fullstack Helper & Quality Assurance
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+Mengembangkan halaman Monitor Antrean Dapur (Kitchen Display System) dengan layout geser horizontal yang efisien.
 
-```bash
-composer require laravel/boost --dev
+Membuat fitur Manajemen Data Master Menu (CRUD) yang dikhususkan untuk akun Admin.
 
-php artisan boost:install
-```
+Menyusun data dummy pada DatabaseSeeder untuk mempermudah simulasi pengujian sistem.
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+🚀 Fitur Utama Aplikasi
+Aplikasi Kopi-Tech dibekali dengan berbagai fitur wajib dan tambahan yang mengikuti praktik pengembangan web modern:
 
-## Contributing
+Sistem Login & Multi-User: Pengguna dapat melakukan login dan logout, serta mendukung lebih dari satu jenis hak akses (Admin, Kasir, Dapur).
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Smart Login Authentication: Mendukung proses login fleksibel menggunakan username unik maupun alamat email resmi.
 
-## Code of Conduct
+Halaman Dashboard POS Kasir: Menampilkan informasi utama berupa katalog menu kafe lengkap, manajemen keranjang belanja, dan catatan kustom resep dari pelanggan.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Kalkulator Kembalian Live (Vanilla JS & Alpine.js): Sistem otomatis mendeteksi kecukupan uang tunai yang diterima dan mengunci tombol checkout jika nominal uang masih kurang.
 
-## Security Vulnerabilities
+Monitor Antrean Dapur (Kitchen Display System): Layar khusus koki untuk memantau detail menu masakan beserta catatan kasir, serta fitur konfirmasi penyajian pesanan.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Manajemen Master Data Menu (CRUD): Modul khusus admin untuk melakukan operasi Tambah, Ubah, Hapus, dan Tampil data katalog menu beserta status stoknya.
 
-## License
+Sistem Data Dummy Otomatis (Seeding): Menyediakan data awal siap pakai (3 akun user dan 9 menu andalan) saat database pertama kali dimigrasikan.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+🛠️ Teknologi yang Digunakan
+Aplikasi ini dibangun menggunakan ekosistem web modern berkinerja tinggi:
+
+Backend Framework: Laravel (Mengikuti pola arsitektur MVC yang bersih).
+
+Frontend CSS Framework: Tailwind CSS.
+
+JavaScript Library: Alpine.js (Bawaan Laravel Breeze) & Vanilla JavaScript.
+
+Database Relasional: MySQL / MariaDB.
+
+Version Control System: Git & GitHub.
+
+🗄️ Struktur Relasi Basis Data (Database Relations)
+Sistem ini dirancang menggunakan basis data relasional dengan skema relasi data yang terstruktur secara benar:
+
+A. 3 Relasi One-to-Many
+User ───► Pesanan: Satu akun staff (Kasir) dapat memproses banyak data nota pesanan (HasMany).
+
+Pesanan ───► DetailPesanan: Satu nota induk transaksi dapat memiliki banyak rincian item makanan/minuman (HasMany).
+
+Menu ───► DetailPesanan: Satu menu produk kafe dapat terdaftar di dalam banyak baris rincian transaksi (HasMany).
+
+B. 1 Relasi Many-to-Many
+Pesanan ◄───► Menu: Banyak pesanan dapat memesan banyak menu sekaligus, dan sebaliknya. Relasi Many-to-Many ini dihubungkan secara sempurna melalui tabel pivot tengah, yaitu detail_pesanans.
+
+💻 Panduan Instalasi Projek
+Berikut adalah langkah-langkah untuk menjalankan aplikasi Kopi-Tech di lingkungan lokal komputer Anda:
+
+1. Kloning Repositori
+   Bash
+
+git clone https://github.com/Rahmad-x/manajemen-kafe
+cd repositori-kelompok 2. Instalasi Dependensi Backend (Composer)
+Bash
+
+composer install 3. Instalasi Dependensi Frontend (NPM)
+Bash
+
+npm install 4. Konfigurasi Environment (.env)
+Salin file .env.example menjadi .env:
+
+Bash
+
+cp .env.example .env
+Buka file .env yang baru dibuat melalui VS Code, lalu sesuaikan konfigurasi nama databasemu:
+
+Cuplikan kode
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_manajemen_kafe
+DB_USERNAME=root
+DB_PASSWORD= 5. Generate Application Key
+Bash
+
+php artisan key:generate 6. Migrasi Database & Suntik Data Dummy (Seeding)
+Pastikan aplikasi MySQL di XAMPP milikmu sudah menyala (Running), lalu jalankan perintah ini di terminal:
+
+Bash
+
+php artisan migrate:fresh --seed 7. Kompilasi Aset Frontend (Tailwind CSS)
+Bash
+
+npm run build 8. Jalankan Server Lokal Laravel
+Bash
+
+php artisan serve
+Setelah aktif, buka browser Anda dan ketik alamat URL: http://127.0.0.1:8000
+
+🔑 Data Akun Login Pengujian (Dummy Accounts)
+Setelah berhasil melakukan perintah seeding di atas, kamu dan kelompokmu bisa langsung mensimulasikan 3 peran akun ini secara bergantian (Bisa login mengetikkan Username ataupun Email):
