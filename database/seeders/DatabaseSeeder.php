@@ -20,7 +20,7 @@ public function run(): void
         User::create([
             'name' => 'Rahmad Admin',
             'username' => 'admin',
-            'email' => 'admin@gmail.com',
+            'email' => 'rhmd76457645@gmail.com',
             'password' => Hash::make('password123'),
             'role' => 'admin',
         ]);
@@ -29,7 +29,7 @@ public function run(): void
         User::create([
             'name' => 'dandi Kasir',
             'username' => 'kasir',
-            'email' => 'kasir@gmail.com',
+            'email' => 'Dandyorlenjunior@gmail.com',
             'password' => Hash::make('password123'),
             'role' => 'kasir',
         ]);
@@ -38,7 +38,7 @@ public function run(): void
         User::create([
             'name' => 'akmal Dapur',
             'username' => 'dapur',
-            'email' => 'dapur@gmail.com',
+            'email' => 'acedomi64@gmail.com',
             'password' => Hash::make('password123'),
             'role' => 'dapur',
         ]);
