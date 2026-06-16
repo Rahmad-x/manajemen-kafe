@@ -118,3 +118,7 @@ Setelah aktif, buka browser Anda dan ketik alamat URL: http://127.0.0.1:8000
 
 🔑 Data Akun Login Pengujian (Dummy Accounts)
 Setelah berhasil melakukan perintah seeding di atas, kamu dan kelompokmu bisa langsung mensimulasikan 3 peran akun ini secara bergantian (Bisa login mengetikkan Username ataupun Email):
+Hak Akses (Role) Username Email Password
+Admin admin rhmd76457645@gmail.com password123
+Kasir kasir Dandyorlenjunior@gmail.com password123
+Dapur dapur acedomi64@gmail.com password123
