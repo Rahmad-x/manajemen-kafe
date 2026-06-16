@@ -42,11 +42,21 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('username', 'password'), $this->boolean('remember'))) {
+        // 🔥 LOGIKA DETEKSI OTOMATIS: Cek apakah input mengandung format email atau sekadar username biasa
+        $loginType = filter_var($this->input('username'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+        // Menyusun kredensial secara dinamis berdasarkan hasil deteksi di atas
+        $credentials = [
+            $loginType => $this->input('username'),
+            'password' => $this->input('password'),
+        ];
+
+        // Jalankan proses login Laravel
+        if (! Auth::attempt($credentials, $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
+                'username' => trans('auth.failed'), // Menggunakan key 'username' agar notifikasi merah muncul tepat di bawah input form
             ]);
         }
 
@@ -69,7 +79,7 @@ class LoginRequest extends FormRequest
         $seconds = RateLimiter::availableIn($this->throttleKey());
 
         throw ValidationException::withMessages([
-            'email' => trans('auth.throttle', [
+            'username' => trans('auth.throttle', [
                 'seconds' => $seconds,
                 'minutes' => ceil($seconds / 60),
             ]),
@@ -81,6 +91,7 @@ class LoginRequest extends FormRequest
      */
     public function throttleKey(): string
     {
-        return Str::transliterate(Str::lower($this->string('email')).'|'.$this->ip());
+        // 🔥 UPDATE: Mengubah pencarian string dari 'email' menjadi 'username' agar sinkron dengan input form HTML
+        return Str::transliterate(Str::lower($this->string('username')).'|'.$this->ip());
     }
 }

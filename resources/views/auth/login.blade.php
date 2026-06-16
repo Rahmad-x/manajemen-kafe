@@ -60,11 +60,11 @@
                     @csrf
 
                     <!-- 1. Input Lapisan Username -->
-                    <div class="mb-4">
-                        <label for="username" class="block text-[11px] font-black text-slate-500 tracking-wider uppercase mb-1.5">Username Akun</label>
+             <div class="mb-4">
+                        <label for="username" class="block text-[11px] font-black text-slate-500 tracking-wider uppercase mb-1.5">Username atau Email Akun</label>
                         <div class="relative">
                             <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400 text-xs">👤</span>
-                            <input type="text" id="username" name="username" value="{{ old('username') }}" required autofocus placeholder="Masukkan username (admin / kasir / dapur)"
+                            <input type="text" id="username" name="username" value="{{ old('username') }}" required autofocus placeholder="Masukkan username atau email Anda..."
                                 class="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-xs font-bold text-slate-800 focus:bg-white focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition duration-150">
                         </div>
                     </div>
